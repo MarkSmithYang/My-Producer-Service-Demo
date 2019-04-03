@@ -1,0 +1,9 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: producer-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.2.233:8080/eureka-server/eureka/
