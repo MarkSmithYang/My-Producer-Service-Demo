@@ -24,7 +24,7 @@ public class ProducerServiceApplication {
 
     @GetMapping("/world")
     public String world(){
-        return "hello world";
+        return "hello world----啊啊";
     }
 
     //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
