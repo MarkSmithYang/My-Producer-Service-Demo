@@ -15,17 +15,6 @@ public class ProducerServiceApplication {
     }
 
     //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-    //用于feign-ribbon-hystrix的服务接口
-
-    @GetMapping("/hello")
-    public String hello(@RequestParam String name){
-        return "hello "+name;
-    }
-
-    @GetMapping("/world")
-    public String world(){
-        return "hello world----啊啊";
-    }
 
     //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 }
