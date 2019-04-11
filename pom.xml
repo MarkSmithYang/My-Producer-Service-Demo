@@ -43,7 +43,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<!--关于swagger离线文档导出的依赖-->
+<!--关于swagger离线文档导出的依赖,这个是必要的依赖-->
         <dependency>
             <groupId>io.github.swagger2markup</groupId>
             <artifactId>swagger2markup</artifactId>
@@ -82,6 +82,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!--导出swagger为离线文档的插件-->
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -103,6 +104,7 @@
                     </attributes>
                 </configuration>
             </plugin>
+            <!--导出swagger为离线文档的插件-->
         </plugins>
     </build>
 

@@ -20,8 +20,32 @@ public class ProducerServiceApplicationTests {
 
     @Test
     public void contextLoads() {
-//        http://localhost:9002/v2/api-docs
+
     }
+
+    //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+    /**
+     * 生成AsciiDocs格式文档,并汇总成一个文件-------------实测这个可以生成html
+     * @throws Exception
+     */
+    @Test
+    public void generateAsciiDocsToFile() throws Exception {
+        //    输出Ascii到单文件
+        Swagger2MarkupConfig config = new Swagger2MarkupConfigBuilder()
+                .withMarkupLanguage(MarkupLanguage.ASCIIDOC)
+                .withOutputLanguage(Language.ZH)
+                .withPathsGroupedBy(GroupBy.TAGS)
+                .withGeneratedExamples()
+                .withoutInlineSchema()
+                .build();
+
+        Swagger2MarkupConverter.from(new URL("http://localhost:9002/v2/api-docs"))
+                .withConfig(config)
+                .build()
+                .toFile(Paths.get("./docs/asciidoc/generated/all"));
+    }
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 
     /**
@@ -85,29 +109,6 @@ public class ProducerServiceApplicationTests {
                 .build()
                 .toFolder(Paths.get("./docs/confluence/generated"));
     }
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-
-    /**
-     * 生成AsciiDocs格式文档,并汇总成一个文件-------------实测这个可以生成html
-     * @throws Exception
-     */
-    @Test
-    public void generateAsciiDocsToFile() throws Exception {
-        //    输出Ascii到单文件
-        Swagger2MarkupConfig config = new Swagger2MarkupConfigBuilder()
-                .withMarkupLanguage(MarkupLanguage.ASCIIDOC)
-                .withOutputLanguage(Language.ZH)
-                .withPathsGroupedBy(GroupBy.TAGS)
-                .withGeneratedExamples()
-                .withoutInlineSchema()
-                .build();
-
-        Swagger2MarkupConverter.from(new URL("http://localhost:9002/v2/api-docs"))
-                .withConfig(config)
-                .build()
-                .toFile(Paths.get("./docs/asciidoc/generated/all"));
-    }
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
     /**
      * 生成Markdown格式文档,并汇总成一个文件
