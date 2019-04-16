@@ -6,4 +6,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.2.233:8080/eureka-server/eureka/
+      #程序员DD的公益eureka注册中心
+      defaultZone: http://eureka.didispace.com/eureka/
+      #defaultZone: http://192.168.2.233:8080/eureka-server/eureka/
