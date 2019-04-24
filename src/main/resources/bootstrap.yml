@@ -1,10 +1,26 @@
-server:
-  port: 9002
-spring:
-  application:
-    name: producer-service
 eureka:
   client:
     service-url:
       #程序员DD的公益eureka注册中心
       defaultZone: http://eureka.didispace.com/eureka/
+
+server:
+  port: 9002
+
+spring:
+  application:
+    name: producer-service
+#  #中间件rabbitmq的配置
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#  #云配置(分布式配置中心)设置
+#  cloud:
+#    config:
+#      #启用服务发现
+#      discovery:
+#        enabled: true
+#        #云配置微服务名
+#        service-id: config-server

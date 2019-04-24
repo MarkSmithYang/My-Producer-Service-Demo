@@ -20,6 +20,14 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
         <!--方法调用链分析依赖,某个大神做的,springboot项目仅需在启动类上注解
                 @EnableProjectTree("execution(* com.yb.security.oauth.server.controller..*(..))"),表达式可自行定义-->
         <dependency>
