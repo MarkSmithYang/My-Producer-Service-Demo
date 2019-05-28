@@ -107,7 +107,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!--导出swagger为离线文档的插件,记得需要通过的maven的插件才能让adoc转成html-->
+            <!--导出swagger为离线文档的插件,记得需要通过的maven的插件(http后缀的那个)才能让adoc转成html-->
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
